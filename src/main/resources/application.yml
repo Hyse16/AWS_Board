@@ -5,6 +5,10 @@ spring:
     username: root
     password: aa1237113
 
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
   devtools:
     livereload:
       enabled: true
