@@ -36,32 +36,32 @@ public class BoardController {
         return "redirect:/";
     }
 
-    @GetMapping("/post/{no}")
-    public String detail(@PathVariable("no") Long no, Model model) {
-        BoardDto boardDTO = boardService.getPost(no);
+    @GetMapping("/post/{po}")
+    public String detail(@PathVariable("po") Long po, Model model) {
+        BoardDto boardDTO = boardService.getPost(po);
 
         model.addAttribute("boardDto", boardDTO);
         return "board/detail.html";
     }
 
-    @GetMapping("/post/edit/{no}")
-    public String edit(@PathVariable("no") Long no, Model model) {
-        BoardDto boardDTO = boardService.getPost(no);
+    @GetMapping("/post/edit/{po}")
+    public String edit(@PathVariable("po") Long po, Model model) {
+        BoardDto boardDTO = boardService.getPost(po);
 
         model.addAttribute("boardDto", boardDTO);
         return "board/update.html";
     }
 
-    @PutMapping("/post/edit/{no}")
+    @PutMapping("/post/edit/{po}")
     public String update(BoardDto boardDTO) {
         boardService.savePost(boardDTO);
 
         return "redirect:/";
     }
 
-    @DeleteMapping("/post/{no}")
-    public String delete(@PathVariable("no") Long no) {
-        boardService.deletePost(no);
+    @DeleteMapping("/post/{po}")
+    public String delete(@PathVariable("po") Long po) {
+        boardService.deletePost(po);
 
         return "redirect:/";
     }
